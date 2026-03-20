@@ -1,6 +1,5 @@
 # Full-stack-CRUD-App-Deployment
 This is a full-stack To-do List app project developed for a Software Engineering course.
---
 # 프로젝트 지시사항
 # 미니 프로젝트: 풀스택 Todo 리스트 앱 만들기 & Vercel 배포
 
