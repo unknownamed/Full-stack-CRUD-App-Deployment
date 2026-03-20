@@ -23,6 +23,18 @@ app.get('/api', (req, res) => {
   res.status(200).json({ message: 'Welcome to the Todo App API' });
 });
 
+// Debug endpoint to check Vercel environment
+app.get('/api/debug', (req, res) => {
+  const mongoose = require('mongoose');
+  res.status(200).json({
+    hasMongoURI: !!process.env.MONGODB_URI,
+    mongoURILength: process.env.MONGODB_URI ? process.env.MONGODB_URI.length : 0,
+    mongoState: mongoose.connection.readyState,
+    nodeEnv: process.env.NODE_ENV,
+    cwd: process.cwd()
+  });
+});
+
 // Local dev server
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 5000;
